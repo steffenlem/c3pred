@@ -30,11 +30,14 @@ Prediction of cargo transport potential of short peptides.
 
 
 Installation
-============
+------------
 
-1. <code>$ git clone https://github.com/steffenlem/c3pred.git </code>
-2. <code>$ python setup.py install</code>
-3. <code>$ c3pred</code>
+
+.. code-block:: bash
+
+	$ git clone https://github.com/steffenlem/c3pred.git
+	$ python setup.py install
+	$ c3pred
 
 
 Usage
