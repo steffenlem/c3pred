@@ -64,10 +64,16 @@ setup(
     keywords='c3pred',
     name='c3pred',
     packages=find_packages(include=['c3pred', 'c3pred.*']),
+    package_data={
+        module.__name__: walker(
+            os.path.dirname(module.__file__),
+            'models'
+        ),
+    },
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/steffenlem/c3pred',
-    version='iGEMtuebingen',
+    version=0.1,
     zip_safe=False,
 )
