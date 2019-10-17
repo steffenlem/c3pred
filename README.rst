@@ -31,8 +31,6 @@ Prediction of cargo transport potential of short peptides.
 
 Installation
 ------------
-
-
 .. code-block:: bash
 
 	$ git clone https://github.com/steffenlem/c3pred.git
@@ -40,20 +38,20 @@ Installation
 	$ c3pred
 
 
+
 Usage
 -----
-## The CLI - Command Line Interface
-```bash
-Usage: c3pred [OPTIONS]
+The CLI - Command Line Interface
 
-  Console script for c3pred.
+.. code-block:: bash
 
-Options:
-  -s, --sequence TEXT  protein string in one-letter code  [required]
-  --help               Show this message and exit.
-```
+	Usage: c3pred [OPTIONS]
 
+	  Console script for c3pred.
 
+	Options:
+	  -s, --sequence TEXT  protein string in one-letter code  [required]
+	  --help               Show this message and exit.
 
 
 Credits
