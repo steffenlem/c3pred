@@ -19,7 +19,7 @@ C3Pred
      :alt: Updates
 
 
-
+Software project of the iGEM Team Tübingen 2019   
 Prediction of cargo transport potential of short peptides.
 
 
@@ -27,10 +27,32 @@ Prediction of cargo transport potential of short peptides.
 * Documentation: https://c3pred.readthedocs.io.
 
 
-Features
+
+
+ 
+
+Installation
+--------
+1. <code>$ git clone https://github.com/steffenlem/c3pred.git/</code>
+2. <code>$ python setup.py install</code>
+2. <code>$ c3pred</code>
+
+
+The CLI - Command Line Interface
 --------
 
-* TODO
+```
+Usage: c3pred [OPTIONS]
+
+  Console script for c3pred.
+
+Options:
+  -s, --sequence TEXT  protein string in one-letter code  [required]
+  --help               Show this message and exit.
+```
+
+
+
 
 Credits
 -------

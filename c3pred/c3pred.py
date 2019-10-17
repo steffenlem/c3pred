@@ -43,10 +43,10 @@ def blomap_extra_encode(amino_sequence):
         'Z': [-0.345, -1.545, -0.53, 0.59, 0.625, 4.0, 128.5, 4.45, 0.444, 26.7, 20.25],  # Glutamic acid or Glutamine,
         'U': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],  # Selenocysteine
         'O': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],  # Pyrrolysine
-        'B': [-1.16, -0.575, -1.07, 1.02, 1.265, 3.0, 114.5, 4.2, 0.4325, 26.55, 19.35], #  Aspartic acid or Asparagine
-        'J': [0.62, 0.815, 1.345, -1.445, -1.415, 3.0, 113.0, 6.0, 0.959, 0.15, 7.35] #  Leucine or Isoleucine
-
+        'B': [-1.16, -0.575, -1.07, 1.02, 1.265, 3.0, 114.5, 4.2, 0.4325, 26.55, 19.35],  # Aspartic acid or Asparagine
+        'J': [0.62, 0.815, 1.345, -1.445, -1.415, 3.0, 113.0, 6.0, 0.959, 0.15, 7.35]  # Leucine or Isoleucine
     }
+
     translated_sequence = list()
     for amino_acid in amino_sequence:
         if amino_acid in ['J', 'B', 'O', 'U', 'Z']:
