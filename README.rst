@@ -29,19 +29,17 @@ Prediction of cargo transport potential of short peptides.
 
 
 
- 
-
 Installation
---------
+-------
 1. <code>$ git clone https://github.com/steffenlem/c3pred.git/</code>
 2. <code>$ python setup.py install</code>
 2. <code>$ c3pred</code>
 
 
-The CLI - Command Line Interface
---------
-
-```
+Usage
+-------
+## The CLI - Command Line Interface
+```bash
 Usage: c3pred [OPTIONS]
 
   Console script for c3pred.
