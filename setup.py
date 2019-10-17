@@ -67,7 +67,7 @@ setup(
     package_data={
         module.__name__: walker(
             os.path.dirname(module.__file__),
-            'models'
+            'data'
         ),
     },
     setup_requires=setup_requirements,

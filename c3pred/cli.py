@@ -4,17 +4,19 @@
 import os
 import sys
 import click
+import pickle
+from.c3pred import predict_sequence
 
 WD = os.path.dirname(__file__)
 
 @click.command()
-def main(args=None):
+@click.option('-s', '--sequence', prompt='protein sequence',
+              help='protein string in one-letter code', required=True)
+def main(sequence):
     """Console script for c3pred."""
-    click.echo("Replace this message by putting your code into "
-               "c3pred.cli.main")
-
-    with open (f'{WD}/models/heidiklim.txt', 'r') as f: contents = f.readlines()
-    print(contents)
+    regressor = pickle.load(open(f'{WD}/data/cpp_predictor.sav', 'rb'))
+    activity = predict_sequence(sequence, regressor)
+    print(activity)
 
     return 0
 

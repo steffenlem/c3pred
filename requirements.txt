@@ -1,5 +1,4 @@
 click
-sklearn
 xgboost
 numpy
 urllib3
