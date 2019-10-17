@@ -1,7 +1,14 @@
 # -*- coding: utf-8 -*-
+import pickle
+import re
 
 import numpy as np
 import warnings
+import os
+
+from .results import Results
+
+from .parsing import get_registry_info, parse_uniprot
 
 
 def do_padding(seq, window_size=10):
@@ -55,8 +62,9 @@ def blomap_extra_encode(amino_sequence):
     return translated_sequence
 
 
-def predict_sequence(input_sequence, regr):
-    # regr = pickle.load(open("data/cpp_predictor.sav", 'rb'))
+def make_prediction(input_sequence):
+    WD = os.path.dirname(__file__)
+    regr = pickle.load(open(f'{WD}/data/cpp_predictor.sav', 'rb'))
     input_sequence = input_sequence.upper()
     window_size = 14
     if len(input_sequence) > window_size:
@@ -68,3 +76,34 @@ def predict_sequence(input_sequence, regr):
     else:
         seq_paddded = do_padding(input_sequence, window_size=window_size)
         return regr.predict(np.asarray([blomap_extra_encode(seq_paddded)]))[0]
+
+
+def predict_fasta(sequence):
+    if re.match("^[a-zA-Z]*$", sequence):
+        if len(sequence) <= 40:
+            activity = make_prediction(sequence)
+            return Results(error=False, error_type=None, description="", sequence=sequence, activity=activity)
+        else:
+            return Results(error=True, error_type="sequence is too long", description="",
+                           sequence=sequence, activity=None)
+    else:
+        return Results(error=True, error_type="Sequence string contains non-valid characters", description="",
+                       sequence=sequence, activity=None)
+
+
+def predict_uniprot(uniprot):
+    unip_info = parse_uniprot(uniprot)
+    if unip_info.error:
+        return unip_info
+    else:
+        unip_info.activity = make_prediction(unip_info.sequence)
+        return unip_info
+
+
+def predict_igem(igem):
+    reg_info = get_registry_info(igem)
+    if reg_info.error:
+        return reg_info
+    else:
+        reg_info.activity = make_prediction(reg_info.sequence)
+        return reg_info

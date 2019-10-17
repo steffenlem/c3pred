@@ -1,22 +1,46 @@
 # -*- coding: utf-8 -*-
 
 """Console script for c3pred."""
-import os
+
 import sys
 import click
-import pickle
-from.c3pred import predict_sequence
+import warnings
 
-WD = os.path.dirname(__file__)
+from .c3pred import make_prediction, predict_fasta, predict_uniprot, predict_igem
+
 
 @click.command()
-@click.option('-s', '--sequence', prompt='protein sequence',
-              help='protein string in one-letter code', required=True)
-def main(sequence):
+@click.option('-s', '--sequence',  # prompt='sequence string',
+              help='If the input is a FASTA protein string, please use this flag',
+              required=False)
+@click.option('-u', '--uniprot',  # prompt='UniProtKB accession number',
+              help="If the input is a UniProtKB accession number, please use this flag",
+              required=False)
+@click.option('-g', '--igem',  # prompt='iGEM Registry ID',
+              help="If the input is a iGEM Registry ID, please use this flag",
+              required=False)
+def main(sequence, uniprot, igem):
     """Console script for c3pred."""
-    regressor = pickle.load(open(f'{WD}/data/cpp_predictor.sav', 'rb'))
-    activity = predict_sequence(sequence, regressor)
-    print(activity)
+    if not sequence and not uniprot and not igem:
+        ctx = click.get_current_context()
+        click.echo(ctx.get_help())
+        ctx.exit()
+
+    if sequence:
+        results = predict_fasta(sequence)
+    elif uniprot:
+        results = predict_uniprot(uniprot)
+        print('UniprotID:\t' + uniprot)
+    elif igem:
+        results = predict_igem(igem)
+        print('Registy ID:\t' + igem)
+
+    if results.error:
+        warnings.warn(results.error_type, Warning)
+    else:
+        print('Description:\t' + results.description)
+        print('Sequence:\t' + results.sequence)
+        print('Activity:\t' + str(make_prediction(results.sequence)))
 
     return 0
 
