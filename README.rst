@@ -19,7 +19,7 @@ C3Pred
      :alt: Updates
 
 
-Software project of the iGEM Team Tübingen 2019   
+Software project of the iGEM Team Tübingen 2019
 Prediction of cargo transport potential of short peptides.
 
 
@@ -33,7 +33,7 @@ Installation
 -------
 1. <code>$ git clone https://github.com/steffenlem/c3pred.git/</code>
 2. <code>$ python setup.py install</code>
-2. <code>$ c3pred</code>
+3. <code>$ c3pred</code>
 
 
 Usage
