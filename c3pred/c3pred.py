@@ -81,8 +81,12 @@ def make_prediction(input_sequence):
 def predict_fasta(sequence):
     if re.match("^[a-zA-Z]*$", sequence):
         if len(sequence) <= 40:
-            activity = make_prediction(sequence)
-            return Results(error=False, error_type=None, description="", sequence=sequence, activity=activity)
+            if len(sequence) >= 4:
+                activity = make_prediction(sequence)
+                return Results(error=False, error_type=None, description="", sequence=sequence, activity=activity)
+            else:
+                return Results(error=True, error_type="sequence is too short", description="",
+                               sequence=sequence, activity=None)
         else:
             return Results(error=True, error_type="sequence is too long", description="",
                            sequence=sequence, activity=None)

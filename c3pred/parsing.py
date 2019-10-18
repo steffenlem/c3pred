@@ -39,8 +39,12 @@ def parse_uniprot(up_id):
             return Results(error=True, error_type="sequence is too long",
                            description=description, sequence=sequence)
         else:
-            return Results(error=False, error_type="no error",
-                           description=description, sequence=sequence)
+            if len(sequence) >= 4:
+                return Results(error=False, error_type="no error",
+                               description=description, sequence=sequence)
+            else:
+                return Results(error=True, error_type="sequence is too short",
+                               description=description, sequence=sequence)
     except:
         return Results(error=True, error_type="Uniprot ID not found", description="", sequence="")
 
@@ -80,8 +84,12 @@ def get_part_info(xml):
                 return Results(error=True, error_type="sequence is too long",
                                description=part_list["part"]["part_short_desc"], sequence=prot_sequence)
             else:  # all requirements for prediction passed
-                return Results(error=False, error_type="none", description=part_list["part"]["part_short_desc"],
-                               sequence=prot_sequence)
+                if len(prot_sequence) >= 4:
+                    return Results(error=False, error_type="none", description=part_list["part"]["part_short_desc"],
+                                   sequence=prot_sequence)
+                else:
+                    return Results(error=True, error_type="sequence is too short",
+                                   description=part_list["part"]["part_short_desc"], sequence=prot_sequence)
         else:
             return Results(error=True, error_type="non-coding sequence",
                            description=part_list["part"]["part_short_desc"], sequence="")
