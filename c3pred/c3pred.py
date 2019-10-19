@@ -71,11 +71,22 @@ def make_prediction(input_sequence):
         pred_kmer_values = []
         for kmer in [input_sequence[i:i + window_size] for i in range(len(input_sequence) - (window_size - 1))]:
             pred_kmer_values.append(regr.predict(np.asarray([blomap_extra_encode(kmer)]))[0])
-        return np.mean(np.asarray(pred_kmer_values))
+        return 2 ** np.mean(np.asarray(pred_kmer_values))
 
     else:
         seq_paddded = do_padding(input_sequence, window_size=window_size)
-        return regr.predict(np.asarray([blomap_extra_encode(seq_paddded)]))[0]
+        return 2 ** regr.predict(np.asarray([blomap_extra_encode(seq_paddded)]))[0]
+
+
+def get_activity_class(activity):
+    medium_border = 40.1550  # 50 percentile
+    high_border = 80.0838  # 75 percentile
+    if activity >= high_border:
+        return "high"
+    elif activity >= medium_border:
+        return "medium"
+    else:
+        return "low/none"
 
 
 def predict_fasta(sequence):
@@ -83,7 +94,9 @@ def predict_fasta(sequence):
         if len(sequence) <= 40:
             if len(sequence) >= 4:
                 activity = make_prediction(sequence)
-                return Results(error=False, error_type=None, description="", sequence=sequence, activity=activity)
+                activity_class = get_activity_class(activity)
+                return Results(error=False, error_type=None, description="", sequence=sequence, activity=activity,
+                               activity_class=activity_class)
             else:
                 return Results(error=True, error_type="sequence is too short", description="",
                                sequence=sequence, activity=None)
@@ -100,7 +113,10 @@ def predict_uniprot(uniprot):
     if unip_info.error:
         return unip_info
     else:
-        unip_info.activity = make_prediction(unip_info.sequence)
+        activity = make_prediction(unip_info.sequence)
+        unip_info.activity = activity
+        activity_class = get_activity_class(activity)
+        unip_info.activity_class = activity_class
         return unip_info
 
 
@@ -109,5 +125,8 @@ def predict_igem(igem):
     if reg_info.error:
         return reg_info
     else:
-        reg_info.activity = make_prediction(reg_info.sequence)
+        activity = make_prediction(reg_info.sequence)
+        reg_info.activity = activity
+        activity_class = get_activity_class(activity)
+        reg_info.activity_class = activity_class
         return reg_info

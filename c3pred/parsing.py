@@ -65,6 +65,8 @@ def get_part_info(xml):
     part_list = xml["rsbpml"]["part_list"]
     if "ERROR" in part_list.keys():
         return Results(error=True, error_type="part not found", description=part_list["ERROR"], sequence="")
+    elif "scar" in part_list.keys():
+        return Results(error=True, error_type="part not found", description="", sequence="")
     else:
         if part_list["part"]["part_type"] == "Coding":
             nt_sequence = part_list["part"]["sequences"]["seq_data"].replace("\n", "")

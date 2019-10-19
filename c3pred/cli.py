@@ -40,7 +40,8 @@ def main(sequence, uniprot, igem):
     else:
         print('Description:\t' + results.description)
         print('Sequence:\t' + results.sequence)
-        print('Activity:\t' + str(make_prediction(results.sequence)))
+        print('Activity:\t' + str(results.activity))
+        print('Activity class:\t' + results.activity_class)
 
     return 0
 
