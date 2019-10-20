@@ -35,7 +35,7 @@ def parse_uniprot(up_id):
             if line.startswith("SQ"):
                 start = True
         sequence = sequence.replace(" ", "")
-        if len(sequence) > 40:
+        if len(sequence) > 100:
             return Results(error=True, error_type="sequence is too long",
                            description=description, sequence=sequence)
         else:
@@ -46,7 +46,7 @@ def parse_uniprot(up_id):
                 return Results(error=True, error_type="sequence is too short",
                                description=description, sequence=sequence)
     except:
-        return Results(error=True, error_type="Uniprot ID not found", description="", sequence="")
+        return Results(error=True, error_type="UniProtKB accession number not found", description="", sequence="")
 
 
 def get_xml(id):
