@@ -1,6 +1,6 @@
-=====
-Usage
-=====
+======================================
+Usage Python Package/Command-line tool
+======================================
 
 The CLI - Command Line Interface
 --------------------------------
@@ -18,7 +18,7 @@ The CLI - Command Line Interface
 	  -g, --igem TEXT      If the input is a iGEM Registry ID, please use this flag
 	  --help               Show this message and exit.
 
-To use C3Pred in a Python script
+How to use C3Pred in a Python script
 --------------------------------
 
 Example Python script::
