@@ -34,7 +34,7 @@ Example Python script::
     # predict using sequence string
     example_3 = predict_igem("BBa_K2660000")
 
-The functions **predict_fasta()**, :**predict_uniprot()**, *predict_igem()** return a "Results" object:
+The functions **predict_fasta()**, :**predict_uniprot()**, **predict_igem()** return a "Results" object:
 
 **Results object**:
 
