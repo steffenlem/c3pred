@@ -12,8 +12,6 @@ You can either clone the public repository:
 
     pip install -r requirements.txt
 
-    export FLASK_APP=cpp_predictor.py
-
     flask run
 
 Or use the use the live version hosted on our server:
