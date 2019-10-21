@@ -19,7 +19,7 @@ The CLI - Command Line Interface
 	  --help               Show this message and exit.
 
 How to use C3Pred in a Python script
---------------------------------
+------------------------------------
 
 Example Python script::
 
@@ -36,7 +36,7 @@ Example Python script::
 
 The functions **predict_fasta()**, :**predict_uniprot()**, **predict_igem()** return a "Results" object:
 
-**Results object**:
+**Results object attributes**:
 
 :sequence: str - sequence string
 :activity: float - activity score
