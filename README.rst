@@ -46,33 +46,6 @@ Information:
 
 
 
-Installation
-------------
-.. code-block:: bash
-
-	$ git clone https://github.com/steffenlem/c3pred.git
-	$ python setup.py install
-	$ c3pred
-
-
-
-Usage
------
-The CLI - Command Line Interface
-
-.. code-block:: bash
-
-	Usage: c3pred [OPTIONS]
-
-	  Console script for c3pred.
-
-	Options:
-	  -s, --sequence TEXT  If the input is a FASTA protein string, please use this flag
-	  -u, --uniprot TEXT   If the input is a UniProtKB accession number, please use this flag
-	  -g, --igem TEXT      If the input is a iGEM Registry ID, please use this flag
-	  --help               Show this message and exit.
-
-
 Credits
 -------
 

@@ -6,7 +6,7 @@ Welcome to C3Pred's documentation!
    :caption: Contents:
 
    readme
-   installation
+   installation_cli
    usage_cli
    modules
    contributing

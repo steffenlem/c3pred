@@ -1,8 +1,8 @@
 .. highlight:: shell
 
-============
-Installation
-============
+=============================================
+Installation Python Package/Command-line tool
+=============================================
 
 
 Stable release
