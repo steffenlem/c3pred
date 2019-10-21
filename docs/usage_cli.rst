@@ -1,6 +1,6 @@
-========================================
-Usage Python Package / Command Line Tool
-========================================
+=====
+Usage
+=====
 
 The CLI - Command Line Interface
 --------------------------------
@@ -26,10 +26,23 @@ Example Python script::
     from c3pred.c3pred import *
     
     # predict using sequence string
-    predict_fasta("AGYLLGKINLKALAALAKKIL")
+    example_1 = predict_fasta("AGYLLGKINLKALAALAKKIL")
     
     # predict using sequence string
-    predict_uniprot("Q86FU0")
+    example_2 = predict_uniprot("Q86FU0")
     
     # predict using sequence string
-    predict_igem("BBa_K2660000")
+    example_3 = predict_igem("BBa_K2660000")
+
+The functions **predict_fasta()**, :**predict_uniprot()**, *predict_igem()** return a "Results" object:
+
+**Results object**:
+
+:sequence: str - sequence string
+:activity: float - activity score
+:activity_class: str - classification for activity ("low/none"/"medium"/"high")
+:description: str - description of the sequence (if available for Uniprot ID, iGEM ID)
+:error: boolean - describes whether the prediction was successful
+:error_type: str - if an error occured, the error message is stored here
+
+
