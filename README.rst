@@ -33,7 +33,7 @@ C3Pred automatically fetches and parses the information about the given identifi
 
 C3Pred was released as:
 
-* Web application with an intuitive browser-based graphical user interface (https://github.com/igemsoftware2019/Tuebingen_c3pred_gui)
+* Web application with an intuitive browser-based graphical user interface (https://github.com/igemsoftware2019/Tuebingen_c3pred_webapp)
 * Python package / Command-line tool (https://github.com/igemsoftware2019/Tuebingen_c3pred)
 
 
