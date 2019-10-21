@@ -38,12 +38,17 @@ C3Pred was released as:
 
 
 
-Information:
 
-* Free software: MIT license
-* Documentation: https://c3pred.readthedocs.io.
+Installation and Usage
+----------------------
+
+Documentation: https://c3pred.readthedocs.io.
 
 
+License
+-------
+
+Free software: MIT license
 
 
 Credits
