@@ -1,8 +1,10 @@
 .. highlight:: shell
 
-=====================================
-Installation graphical user interface
-=====================================
+====================
+Installation Web App
+====================
+
+You can either clone the public repository:
 
 .. code-block:: console
 
@@ -13,3 +15,7 @@ Installation graphical user interface
     export FLASK_APP=cpp_predictor.py
 
     flask run
+
+Or use the use the live version hosted on our server:
+
+https://igem-tuebingen.com/c3pred/
