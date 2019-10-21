@@ -8,7 +8,7 @@ You can either clone the public repository:
 
 .. code-block:: console
 
-    git clone https://github.com/steffenlem/CPP-predictor-app.git
+    git clone https://github.com/igemsoftware2019/Tuebingen_c3pred_webapp.git
 
     pip install -r requirements.txt
 

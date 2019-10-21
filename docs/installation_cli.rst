@@ -32,13 +32,13 @@ You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/steffenlem/c3pred
+    $ git clone https://github.com/igemsoftware2019/Tuebingen_c3pred.git
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl -OJL https://github.com/steffenlem/c3pred/tarball/master
+    $ curl -OJL https://github.com/igemsoftware2019/c3pred/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
