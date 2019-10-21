@@ -6,17 +6,11 @@ C3Pred - Cell-penetrating peptide activity prediction tool
 .. image:: https://img.shields.io/pypi/v/c3pred.svg
         :target: https://pypi.python.org/pypi/c3pred
 
-.. image:: https://img.shields.io/travis/steffenlem/c3pred.svg
-        :target: https://travis-ci.org/steffenlem/c3pred
 
 .. image:: https://readthedocs.org/projects/c3pred/badge/?version=latest
         :target: https://c3pred.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-
-.. image:: https://pyup.io/repos/github/steffenlem/c3pred/shield.svg
-     :target: https://pyup.io/repos/github/steffenlem/c3pred/
-     :alt: Updates
 
 
 Software project of the iGEM Team Tübingen 2019
