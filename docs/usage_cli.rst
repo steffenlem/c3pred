@@ -1,6 +1,6 @@
-======================================
-Usage Python Package/Command-line tool
-======================================
+====================
+Usage Python Package
+====================
 
 The CLI - Command Line Interface
 --------------------------------
