@@ -7,7 +7,7 @@ Welcome to C3Pred's documentation!
 
    readme
    installation
-   usage
+   usage_cli
    modules
    contributing
    authors
