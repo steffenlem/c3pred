@@ -1,5 +1,5 @@
 click
-xgboost
+xgboost==1.1.1
 numpy
 urllib3
 xmltodict
