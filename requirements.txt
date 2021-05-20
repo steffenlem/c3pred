@@ -1,4 +1,4 @@
-click
+click==8.0.1
 xgboost
 numpy
 urllib3
