@@ -1,6 +1,6 @@
 click
 xgboost
-numpy
+numpy==1.22.1
 urllib3
 xmltodict
 biopython
