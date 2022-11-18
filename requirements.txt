@@ -3,4 +3,4 @@ xgboost
 numpy
 urllib3
 xmltodict
-biopython
+biopython==1.80
